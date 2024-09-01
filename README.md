@@ -1,0 +1,1 @@
+A full Chess application in Python made with no external help, just to see how well I would fair. Now, while there are certainly bugs (especially when refactoring to add AI), I would say that I am very proud of what I've made. You can view my failed attempts in the appropriately named "previous failed versions."
