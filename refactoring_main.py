@@ -1,18 +1,5 @@
 """
-most important thing right now is to modularize everything. what i need to figure out
-is how the parameters should be accessed - by the game attributes or by passing special
-arguments?
-
-
-to add even a random move AI the AI needs to know which moves are even possible.
-the best way to do this currently seems to move the check for legal moves into the
-piece class valid_move() method. it would simply take in copies if the squares list and stuff
-(so as to avoid the quantum chess bug). castling and enpassant would probably use the same
-methods to compute, but maybe minor tweaks will need to be made in the piece move method.
-promotions will also need to be kind of re-done to be bot-friendly. i also need to figure 
-out how to make it play against itself, or even how to play as either black or white. should also
-make it slightly delayed so that it doesnt instantly move. this can just be done by checking if 
-delta-time is >= 1 or something
+most important thing right now is to modularize everything.
 
 for custom positions, castling will simply need to make checks at the beginning of the game
 before assigning the possibility of castling as True to the game attributes.
@@ -498,7 +485,8 @@ class Game:
                         new_grid[0][3] = 'br0'
 
                         self.black_castling_possible = False
-
+            
+        # this is really stupid lol
         returning_grid = []
         for new_row in new_grid:
             new_new_row = []
@@ -935,7 +923,6 @@ class Game:
                 origin_square, move, piece_id = self.black_bot.generate_move(self.squares, self.white_pieces, self.black_pieces)
                 if self.new_game_state(origin_square, move, piece_id):
                     return True
-# i hear voices in the walls......
 
 def main():
 
